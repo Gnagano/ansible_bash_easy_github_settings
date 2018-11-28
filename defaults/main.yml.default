@@ -1,8 +1,7 @@
 ---
 
 #you need to edit
-access_token: 'where_you_put_github_access_token'
-home_dir: 'your_home_directory'
+access_token_dir: 'where_you_put_github_access_token'
 github_user: 'github_username'
 key_comment: 'key_comment_for_keygen'
 user: 'username_who_execute_shell'
