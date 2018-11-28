@@ -1,7 +1,6 @@
-Ansible roles: github_easy_maintenance settings
-===
+# Ansible roles: github_easy_maintenance settings
 
-# Overviews
+## Overviews
 
 Github_easy_maintenance is [this repository](https://github.com/gano2018/bash_github_easy_maintenance)
 This roles makes setting for using this repository, git clone and github_token_setting and so on.
@@ -14,7 +13,7 @@ Get the api access token for Github from [this page](https://github.com/settings
 
 ### 2. Put the file contains api access token
 
-Put the file contains api access token anywhere you want.
+Creates new file `templates/github_token` and write the api access token in the file.
 
 ### 3. Edit the defaults/main.yml.default
 
@@ -24,7 +23,7 @@ Change the main.yml to your information as below.
 
   ```
   #! /bin/sh
-  access_token_dir: 'where_you_put_github_access_token'  # -> the place you put the token file
+  access_token_dir: 'where_you_put_github_access_token'  # -> the place you put the token file.
   github_user: 'github_username'                         # -> your github username
   key_comment: 'key_comment_for_keygen'                  # -> key comment for keygen command
   user: 'username_who_execute_shell'                     # -> who uses the shell command
