@@ -1,0 +1,16 @@
+---
+- name: Create directory for github access token
+  file:
+    path: "{{ home_dir }}/.github/"
+    state: directory
+    owner: "{{ user | default('vagrant') }}"
+    group: "{{ user | default('vagrant') }}"
+    mode: 0644
+
+- name: Copy a github access token
+  copy:
+    src: github_token
+    dest: "{{ home_dir }}/.github/github_token"
+    owner: "{{ user | default('vagrant') }}"
+    group: "{{ user | default('vagrant') }}"
+    mode: 0600

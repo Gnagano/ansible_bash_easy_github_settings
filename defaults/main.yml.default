@@ -1,0 +1,19 @@
+---
+
+#you need to edit
+access_token: 'where_you_put_github_access_token'
+home_dir: 'your_home_directory'
+github_user: 'github_username'
+key_comment: 'key_comment_for_keygen'
+user: 'username_who_execute_shell'
+
+#you need to edit if github_api url is changed
+github_api_url: 'https://api.github.com'
+
+#you don't need to edit
+github_easy_shell_url: 'https://github.com/gano2018/bash_github_easy_maintenance.git'
+github_easy_shells:
+  - github_del_repo
+  - github_initial_clone
+  - github_initial_deploy
+  - github_keygen
