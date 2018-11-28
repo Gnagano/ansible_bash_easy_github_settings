@@ -1,0 +1,25 @@
+---
+- name: Set for path of github_easy_shell
+  stat: path="/opt/github_easy"
+  register: github_easy_shell_path
+
+- name: Clone github_easy_shell
+  git:
+    repo: "{{ github_easy_shell_url }}"
+    dest: "/opt/github_easy"
+  when: github_easy_shell_path.stat.exists == false
+
+- name: Copy the settings.conf
+  template:
+    src: 'settings.conf.j2'
+    dest: "/opt/github_easy/settings.conf"
+    owner: "root"
+    group: "root"
+    mode: 0755
+
+- name: Link github_easy_shell to /usr/local/bin
+  file:
+    src:  "/opt/github_easy/{{ item }}.sh"
+    dest: "/usr/local/bin/{{ item }}"
+    state: link
+  with_items: "{{ github_easy_shells }}"

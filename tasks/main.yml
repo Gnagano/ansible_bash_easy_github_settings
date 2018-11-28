@@ -1,0 +1,3 @@
+---
+- include: github_api.yml        tags=github
+- include: github_easy_shell.yml tags=github
